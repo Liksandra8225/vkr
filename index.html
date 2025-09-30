@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Шапка -->
     <header class="header">
         <div class="header-top">
             <a href="index.html">
-    <img src="logo.png" alt="Логотип" class="logo">
+                <img src="logo.png" alt="Логотип" class="logo">
             </a>
             <nav class="nav">
                 <a href="#">Главное</a>
@@ -30,7 +31,7 @@
         </div>
     </header>
 
-    <!-- Мэйн -->
+    <!-- Главный блок -->
     <main>
         <section class="intro" style="background-image: url('main-bg.png');">
             <h1>Кулинария для взрослых</h1>
@@ -44,32 +45,43 @@
                 без лишних калорий. Это блюда с упором на овощи, нежирное мясо, рыбу 
                 и цельнозерновые продукты.
             </p>
-            
+
+            <!-- Плашки -->
             <div class="categories">
-                <div class="card"><a href="#breakfast">Завтраки</a></div>
-                <div class="card"><a href="#lunch">Обеды</a></div>
-                <div class="card"><a href="#dinner">Ужины</a></div>
-                <div class="card"><a href="#dessert">Десерты</a></div>
+                <a href="#breakfast" class="card">Завтраки</a>
+                <a href="#lunch" class="card">Обеды</a>
+                <a href="#dinner" class="card">Ужины</a>
+                <a href="#dessert" class="card">Десерты</a>
             </div>
-            
         </section>
 
         <!-- Разделы -->
-        <section id="breakfast">
-            <h2>Завтраки</h2>
-            <div class="recipes">
-                <div class="recipe">
-                    <a href="#modal1">
-                         <img src="breakfast-1.png" alt="Овсянка">
-                <p><b>Овсянка с яблоком и корицей</b><br>Классический лёгкий завтрак: овсяные хлопья на воде или молоке, яблоко, корица и немного орехов.</p>
-                    </a>
-                </div>
+<section id="breakfast">
+  <h2>Завтраки</h2>
+  <div class="recipes">
+    
+    <div class="recipe">
+      <a href="#modal1">
+        <img src="breakfast-1.png" alt="Овсянка">
+        <p><b>Овсянка с яблоком и корицей</b><br>Классический лёгкий завтрак: овсяные хлопья на воде или молоке, яблоко, корица и немного орехов.</p>
+      </a>
+    </div>
 
-                <div class="recipe">
-                    <img src="breakfast-2.png" alt="Омлет">
-                    <p><b>Яичный омлет с овощами</b><br>Взбитые яйца с перцем, шпинатом и помидорами. Богат белком и витаминами.</p>
+    <div class="recipe">
+      <img src="breakfast-2.png" alt="Омлет">
+      <p><b>Яичный омлет с овощами</b><br>Взбитые яйца с перцем...</p>
+    </div>
+  </div>
+
+<!-- Модальное окно -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <a href="#" class="close-text">Закрыть</a>
+                    <h2>Овсянка с яблоком и корицей</h2>
+                    <p>Как готовить: овсяные хлопья варить на воде или молоке 5-7 минут, добавить яблоко, корицу, орехи. Все перемешать или украсить сверху, все по желанию. Полезный и сытный завтрак готов.</p>
                 </div>
-            </div>
+            </div> 
+
         </section>
 
         <section id="lunch">
@@ -124,19 +136,6 @@
                 <img src="dessert-1.png" alt="Популярное">
             </div>
         </section>
-
-        <!-- Модальные окна -->
-        <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h2>Овсянка с яблоком и корицей</h2>
-            <p>
-            Полный рецепт: овсяные хлопья на молоке или воде, яблоко,
-            немного корицы, орехи для посыпки. Варим 5–7 минут, украшаем фруктами.
-            </p>
-            <a href="#" class="close">Закрыть ✖</a>
-        </div>
-        </div>
-
     </main>
 
     <!-- Подвал -->
@@ -153,9 +152,4 @@
 
 </body>
 </html>
-
-
-
-
-
 
