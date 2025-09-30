@@ -28,14 +28,13 @@ body {
 
 .logo {
     height: 60px;
-    transition: 0.3s; /* плавный эффект */
+    transition: transform 0.3s, filter 0.3s;
 }
 
 .logo:hover {
-    transform: scale(1.05); /* лёгкое увеличение */
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* свечение */
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px #ff6600);
 }
-
 
 .nav {
     display: flex;
@@ -50,14 +49,14 @@ body {
 }
 
 .nav a:hover {
-    color: #ff6600; /* изменение цвета при наведении */
+    color: #ff6600;
 }
 
 .burger {
     display: none;
     background: none;
     border: none;
-    cursor: pointer; /* бургерное меню, курсор */
+    cursor: pointer;
 }
 
 .header-img img {
@@ -65,7 +64,7 @@ body {
     height: auto;
 }
 
-/* Мэйн */
+/* Главный блок */
 .intro {
     text-align: center;
     padding: 2rem;
@@ -83,34 +82,32 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
-    justify-items: center; /* чтобы всегда были по центру */
+    justify-items: center;
 }
-
 
 .categories .card {
-    width: 200px;
-    height: 120px;
-    background-color: #fdfaf5;
-    border: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.categories .card a {
-    text-decoration: none;
-    color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 120px;
+  background-color: #fdfaf5;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .categories .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background-color: #fffae0; /* мягкая подсветка при наведении */
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 200, 0.9);
 }
+
 
 /* Рецепты */
 section {
@@ -187,62 +184,72 @@ footer p {
     transform: scale(1.2);
 }
 
-/* модальные окна */
+/* Модалка */
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;                  /* то же что top:0; right:0; bottom:0; left:0 */
   background: rgba(0,0,0,0.6);
-  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;             /* поверх страницы */
 }
+
+.modal:target { display: flex; }
 
 .modal-content {
+  position: relative;        /* ВАЖНО: теперь абсолютные элементы — внутри окна */
   background: #fff;
-  color: #333;
-  width: 90%;
-  max-width: 500px;
-  margin: 10% auto;
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: left;
-  position: relative;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: min(90vw, 600px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
-.modal:target {
-  display: block;
-}
-
-.close {
+/* Крестик и слово «Закрыть» закрепим в правом верхнем углу окна */
+.modal-content .close,
+.modal-content .close-text {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 12px;
+  line-height: 1;
   text-decoration: none;
-  font-weight: bold;
   color: #333;
-  font-size: 1.2rem;
-}
-.close:hover {
-  color: red;
+  transition: transform .15s ease, color .15s ease;
 }
 
+.modal-content .close {
+  right: 12px;               /* крестик совсем у края */
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal-content .close-text {
+  right: 48px;               /* слово чуть левее крестика */
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.05);
+}
+
+.modal-content .close:hover,
+.modal-content .close-text:hover {
+  color: #ff6600;
+  transform: scale(1.05);
+}
 
 
-/* адаптив */
-/* планшеты */
+
+/* Адаптив */
 @media (max-width: 1024px) and (min-width: 601px) {
     .categories {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
-        justify-items: center;
-    }
-
-    .recipes {
-        justify-content: center;
     }
 }
 
-/* смартфоны */
+
 @media (max-width: 600px) {
     .nav {
         display: none;
@@ -252,20 +259,25 @@ footer p {
         display: inline-block;
     }
 
+    .recipes {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .categories {
         grid-template-columns: 1fr;
         justify-items: center;
         gap: 1rem;
     }
 
-    .categories img {
+    .categories .card {
         width: 80%;
         max-width: 250px;
     }
 
-    .recipes {
-        flex-direction: column;
-        align-items: center;
-    }
+  .modal-content { padding: 1.25rem 1.5rem; }
+  .modal-content .close { right: 10px; font-size: 22px; }
+  .modal-content .close-text { right: 44px; font-size: 13px; }
 }
+
 
