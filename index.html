@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кулинария для взрослых</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header-top">
+            <a href="index.html">
+    <img src="logo.png" alt="Логотип" class="logo">
+            </a>
+
+            <nav class="nav">
+                <a href="#">Главное</a>
+                <a href="#breakfast">Завтраки</a>
+                <a href="#lunch">Обеды</a>
+                <a href="#dinner">Ужины</a>
+                <a href="#dessert">Десерты</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <button class="burger">
+                <img src="hamburger.svg" alt="Меню">
+            </button>
+        </div>
+        <div class="header-img">
+            <img src="header-bg.png" alt="Шапка">
+        </div>
+    </header>
+
+    <!-- Мэйн -->
+    <main>
+        <section class="intro" style="background-image: url('main-bg.png');">
+            <h1>Кулинария для взрослых</h1>
+            <p>
+                Кулинария для взрослых — это про осознанный подход к питанию. 
+                С возрастом наш организм меняется: замедляется обмен веществ, 
+                снижается потребность в калориях, но возрастает необходимость в микроэлементах.
+            </p>
+            <p>
+                Мы предлагаем рецепты, которые помогут сохранить энергию и здоровье 
+                без лишних калорий. Это блюда с упором на овощи, нежирное мясо, рыбу 
+                и цельнозерновые продукты.
+            </p>
+
+            <div class="categories">
+                <div class="card"><a href="#breakfast">Завтраки</a></div>
+                <div class="card"><a href="#lunch">Обеды</a></div>
+                <div class="card"><a href="#dinner">Ужины</a></div>
+                <div class="card"><a href="#dessert">Десерты</a></div>
+            </div>
+        </section>
+
+        <!-- Разделы -->
+        <section id="breakfast">
+            <h2>Завтраки</h2>
+            <div class="recipes">
+                <div class="recipe">
+                    <a href="#modal1">
+                         <img src="breakfast-1.png" alt="Овсянка">
+                <p><b>Овсянка с яблоком и корицей</b><br>Классический лёгкий завтрак: овсяные хлопья на воде или молоке, яблоко, корица и немного орехов.</p>
+                    </a>
+                </div>
+
+                <div class="recipe">
+                    <img src="breakfast-2.png" alt="Омлет">
+                    <p><b>Яичный омлет с овощами</b><br>Взбитые яйца с перцем, шпинатом и помидорами. Богат белком и витаминами.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lunch">
+            <h2>Обеды</h2>
+            <div class="recipes">
+                <div class="recipe">
+                    <img src="lunch-1.png" alt="Курица">
+                    <p><b>Куриная грудка с овощами</b><br>Курица в пароварке с брокколи, морковью и фасолью. Сытное и лёгкое блюдо.</p>
+                </div>
+                <div class="recipe">
+                    <img src="lunch-2.png" alt="Суп-пюре">
+                    <p><b>Суп-пюре из тыквы</b><br>Ароматный суп из запечённой тыквы с нежирными сливками и чесноком.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dinner">
+            <h2>Ужины</h2>
+            <div class="recipes">
+                <div class="recipe">
+                    <img src="dinner-1.png" alt="Рыба">
+                    <p><b>Запечённая рыба с лимоном</b><br>Филе белой рыбы с лимоном, укропом и оливковым маслом.</p>
+                </div>
+                <div class="recipe">
+                    <img src="dinner-2.png" alt="Салат">
+                    <p><b>Тёплый салат с киноа</b><br>Киноа, томаты, шпинат и авокадо с оливковым маслом.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dessert">
+            <h2>Десерты</h2>
+            <div class="recipes">
+                <div class="recipe">
+                    <img src="dessert-1.png" alt="Творожный мусс">
+                    <p><b>Творожный мусс с ягодами</b><br>Обезжиренный творог с мёдом и йогуртом, украшенный ягодами.</p>
+                </div>
+                <div class="recipe">
+                    <img src="dessert-2.png" alt="Запечённое яблоко">
+                    <p><b>Запечённое яблоко с корицей</b><br>Яблоко с мёдом, орехами и корицей в духовке.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные рецепты -->
+        <section class="popular">
+            <h2>Популярные рецепты</h2>
+            <div class="recipes">
+                <img src="breakfast-1.png" alt="Популярное">
+                <img src="lunch-1.png" alt="Популярное">
+                <img src="dinner-1.png" alt="Популярное">
+                <img src="dessert-1.png" alt="Популярное">
+            </div>
+        </section>
+
+        <!-- Модальные окна -->
+        <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h2>Овсянка с яблоком и корицей</h2>
+            <p>
+            Полный рецепт: овсяные хлопья на молоке или воде, яблоко,
+            немного корицы, орехи для посыпки. Варим 5–7 минут, украшаем фруктами.
+            </p>
+            <a href="#" class="close">Закрыть ✖</a>
+        </div>
+        </div>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer id="contacts" style="background-image: url('footer-bg.png');">
+        <p>2025 Мой сайт. Все права защищены.</p>
+        <p>Контакты: info@mysite.ru</p>
+        <div class="socials">
+            <a href="https://t.me/Santa8223"><img src="social-1.svg" alt="Telegram"></a>
+            <a href="https://t.me/Santa8223"><img src="social-2.svg" alt="Telegram"></a>
+            <a href="https://t.me/Santa8223"><img src="social-3.svg" alt="Telegram"></a>
+            <a href="https://t.me/Santa8223"><img src="social-4.svg" alt="Telegram"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
