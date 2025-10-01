@@ -147,6 +147,14 @@ section {
     padding: 1rem;
     font-size: 0.9rem;
 }
+.recipes a {
+  color: #333;            /* цвет обычного текста */
+  text-decoration: none;  /* убирает подчёркивание */
+}
+.recipes a:hover {
+  color: #ff6600;  /* цвет при наведении */
+}
+
 
 /* Популярные */
 .popular img {
@@ -279,5 +287,6 @@ footer p {
   .modal-content .close { right: 10px; font-size: 22px; }
   .modal-content .close-text { right: 44px; font-size: 13px; }
 }
+
 
 
